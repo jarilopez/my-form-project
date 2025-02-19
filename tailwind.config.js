@@ -7,15 +7,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#4F46E5',
-          dark: '#0F172A',
-          light: '#818CF8'
-        }
+        'primary': '#0379E8',
+        'background': '#F8F9FB',
+        'input': '#E3E9F3',
+        'input-bg': '#E3E9F3',
+        'secondary': '#0379E8'
+      },
+      fontSize: {
+        'label': '1.1rem',
       },
       boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)'
-      }
+        'form': '0 4px 6px -1px rgba(230, 224, 224, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      },
+      spacing: {
+        'form': '2rem',
+        'form-spacing': '2rem',  // Added this line for form group spacing
+      },
     },
   },
   plugins: [],

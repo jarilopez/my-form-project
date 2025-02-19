@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #0379E8;
+  --background-light: #F8F9FB;
+  --input-bg: #E3E9F3;
+  --text-primary: #1F2937;
+}
+
 #app {
-  background: linear-gradient(125deg, #000428 0%, #004e92 100%);
+  background: #081640;
   min-height: 100vh;
   padding: 3rem;
   display: flex;
@@ -9,14 +22,34 @@
   overflow: hidden;
 }
 
-
 #app::before {
   content: '';
   position: absolute;
   width: 150%;
   height: 150%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 60%);
+  background: #081640;
   pointer-events: none;
+}
+
+@layer components {
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg bg-input-bg border border-gray-300 
+           focus:border-secondary focus:ring-2 focus:ring-secondary/20 
+           outline-none transition duration-200;
+  }
+  
+  .form-label {
+    @apply block text-base font-medium text-primary mb-2;
+  }
+  
+  .form-group {
+    @apply mb-form-spacing;
+  }
+  
+  .btn-primary {
+    @apply bg-secondary hover:bg-secondary/90 text-white font-semibold 
+           py-3 px-6 rounded-lg transition duration-200;
+  }
 }
 
 .submit-request {
@@ -37,9 +70,9 @@
 h1 {
   font-size: 3.2rem;
   font-weight: 800;
-  text-align: center;
-  margin-bottom: 4rem;
-  background: linear-gradient(135deg, #ffffff 20%, #89f7fe 100%);
+  text-align: left;
+  margin-bottom: 4rem !important;
+  background: linear-gradient(135deg, #ffffff 20%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.03em;
@@ -67,25 +100,6 @@ h1 {
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-}
-
-.form-group:hover {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-3px);
-  box-shadow: 
-    0 15px 30px rgba(0, 0, 0, 0.2),
-    0 8px 12px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  letter-spacing: 0.02em;
 }
 
 input, select, textarea {
