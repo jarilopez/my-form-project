@@ -1,11 +1,14 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
-  <RouterView />
+  <div>
+    <RouterView />
+    <AppFooter />
+  </div>
 </template>
 
 <style>
-/* Add any global styles here */
 </style>
